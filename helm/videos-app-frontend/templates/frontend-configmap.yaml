@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-frontend-configmap
 data:
-  backend_url: {{ .Values.frontend.backendUrl }}
+  backend_url: {{ .Values.backendUrl }}
   
