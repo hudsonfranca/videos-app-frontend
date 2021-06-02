@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(273px, 273px));
+  justify-content: center;
+  align-items: flex-start;
+  grid-gap: 1rem;
+  background-color:#fff;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.empty{
+  background-color:#fff;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}

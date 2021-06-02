@@ -1,0 +1,59 @@
+.card{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr ;
+  grid-template-areas: "avatar author delete_button"
+                        "avatar comment delete_button";
+
+
+  justify-content: flex-start;
+  margin-bottom: 4px;
+  border-top: 1px solid #e5e5e5;
+  padding: 10px;
+}
+
+
+
+.avatar{
+  grid-area: avatar;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+
+.comment{
+  grid-area: comment;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.comment span{
+  color: blue;
+  margin-right: 4px;
+}
+
+
+.delete_button{
+  grid-area: delete_button;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.delete_button img{
+  width: 25px;
+  cursor: pointer;
+}
+
+
+
