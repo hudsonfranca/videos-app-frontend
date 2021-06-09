@@ -1,11 +1,17 @@
 import axios from 'axios'
 
-const api = axios.create({
-  baseURL:
-    typeof window !== 'undefined'
-      ? `${process.env.BACKEND_URL}`
-      : 'http://backend-service',
-  withCredentials: true
-})
+const buildClient = () => {
+  if (typeof window === 'undefined') {
+    return axios.create({
+      baseURL: `http://videos-app-backend-chart-backend-service`,
+      withCredentials: true
+    })
+  } else {
+    return axios.create({
+      baseURL: `/api`,
+      withCredentials: true
+    })
+  }
+}
 
-export default api
+export default buildClient

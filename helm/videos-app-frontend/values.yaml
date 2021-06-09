@@ -1,2 +1,4 @@
 tag: latest
-backendUrl: localhost
+
+backendUrl: http://159.203.158.170
+

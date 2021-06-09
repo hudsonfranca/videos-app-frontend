@@ -31,7 +31,7 @@ const Signup: React.FC = () => {
   useEffect(() => {
     const currentUser = async () => {
       try {
-        await api.get('/auth/user')
+        await api().get('/auth/user')
         router.push('/')
       } catch (error) {
         console.error(error)
@@ -70,7 +70,7 @@ const Signup: React.FC = () => {
       formData.append('profilePicture', values.profilePicture)
 
       try {
-        await api.post('/auth/signup', formData)
+        await api().post('/auth/signup', formData)
         router.reload()
       } catch (error) {
         console.error(error)

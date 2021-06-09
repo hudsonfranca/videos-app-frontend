@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-frontend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
      app: frontend
@@ -14,21 +14,23 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: hudsonfranca/videosapp_frontend:{{ .Values.tag }}
+        image: hudsonfranca/videosapp_frontend:latest
         resources:
           limits:
-            cpu: "1"
-            memory: "2Gi"
+            cpu: "0.5"
+            memory: "600Mi"
           requests:
             cpu: "0.5"
-            memory: "1Gi"
+            memory: "300Mi"
         ports:
         - containerPort: 3000
         env:
-          - name: BACKEND_URL
+          - name: NEXT_PUBLIC_BACKEND_URL
             valueFrom: 
               configMapKeyRef:
                 name: {{ .Release.Name }}-frontend-configmap
                 key: backend_url
+          - name: NEXT_PUBLIC_BACKEND_SERVICE_NAME
+            value: {{ .Release.Name }}-frontend-service
        
 

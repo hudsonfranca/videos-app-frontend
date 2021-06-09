@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
 
   const logout = async () => {
     try {
-      await api.get('/auth/logout')
+      await api().get('/auth/logout')
       router.reload()
     } catch (error) {
       console.error(error)
@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
   useEffect(() => {
     const currentUser = async () => {
       try {
-        const { data } = await api.get<CurrentUser>('/auth/user')
+        const { data } = await api().get<CurrentUser>('/auth/user')
         if (data) setUser(data)
       } catch (error) {
         console.error(error)

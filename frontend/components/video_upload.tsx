@@ -43,7 +43,7 @@ const VideoUpload = () => {
   useEffect(() => {
     const currentUser = async () => {
       try {
-        await api.get('/auth/user')
+        await api().get('/auth/user')
       } catch (error) {
         console.error(error)
         router.push('/login')
@@ -88,7 +88,7 @@ const VideoUpload = () => {
       formData.append('name', name)
       formData.append('tags', tagArray.join())
       try {
-        await api.post('/video', formData)
+        await api().post('/video', formData)
         notifySuccess()
         resetForm()
         setTagArray([])

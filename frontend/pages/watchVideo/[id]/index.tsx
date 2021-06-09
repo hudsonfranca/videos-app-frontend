@@ -22,7 +22,7 @@ const WatchVideo = ({
 
   const loadComments = async () => {
     try {
-      const { data } = await api.get(`comment/video/${video.id}`)
+      const { data } = await api().get(`comment/video/${video.id}`)
       setComents(data)
     } catch (error) {
       console.log(error)
@@ -78,11 +78,11 @@ const WatchVideo = ({
 }
 
 export async function getServerSideProps(context) {
-  const { data: video } = await api.get<VideoByID>(
+  const { data: video } = await api().get<VideoByID>(
     `/video/${context.params.id}`
   )
   const tags = video.videotags.map(({ tag }) => tag)
-  const { data: recommendations } = await api.get<VideoByID[]>(`/video`, {
+  const { data: recommendations } = await api().get<VideoByID[]>(`/video`, {
     params: tags
   })
 
