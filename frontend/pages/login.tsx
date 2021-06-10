@@ -73,7 +73,7 @@ const Login: React.FC = () => {
             <Form
               noValidate
               onSubmit={handleSubmit}
-              className="shadow-lg p-5 rounded-3 "
+              className="border border-1 p-5 rounded-3 "
             >
               <Row className="m-4">
                 <Col className="d-flex justify-content-center h-100 align-items-center mb-4">

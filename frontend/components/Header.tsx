@@ -54,14 +54,15 @@ export const Header: React.FC = () => {
               if (searchValue !== '')
                 router.push(`/search_video/${searchValue}`)
             }}
+            className={styles.form}
           >
             <FormControl
               type="text"
               placeholder="Pesquisar..."
-              className="mr-sm-1"
               value={searchValue}
               onChange={e => setSearchValue(e.target.value)}
             />
+
             <Button variant="light" type="submit">
               <img src="/search.svg" alt="search icon" />
             </Button>
