@@ -83,7 +83,7 @@ const UpdateUser: React.FC = () => {
       <Head>
         <title>Atualizar dados</title>
       </Head>
-      <Container className="vh-100 pe-5 p-0 m-0" fluid>
+      <Container className="min-vh-100 pe-5 p-0 m-0" fluid>
         <ToastContainer />
 
         <Row className="justify-content-center h-100 align-items-center ">

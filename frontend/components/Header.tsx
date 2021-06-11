@@ -80,8 +80,12 @@ export const Header: React.FC = () => {
 
           {user && (
             <>
-              <Nav.Link onClick={() => router.push('/my_account')}>
+              <Nav.Link
+                onClick={() => router.push('/my_account')}
+                className={styles.my_account}
+              >
                 <img src={user.profilePicture} className={styles.avatar} />
+                Minha conta
               </Nav.Link>
               <Nav.Link onClick={logout} className="d-flex align-items-center">
                 Sair
