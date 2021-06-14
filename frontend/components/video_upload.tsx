@@ -116,6 +116,11 @@ const VideoUpload = () => {
     }
   }
 
+  const addtag = () => {
+    setTagArray(oldvalue => [...oldvalue, tag])
+    setTag('')
+  }
+
   const handleTagChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTag(e.target.value)
   }
@@ -234,7 +239,9 @@ const VideoUpload = () => {
                         />
                       </div>
                     </div>
-                    <small>precione ENTER para adiconar a tag</small>
+                    <Button block variant="secondary" onClick={() => addtag()}>
+                      Adicionar tag
+                    </Button>
                   </Form.Group>
                 </Col>
               </Row>
@@ -255,7 +262,7 @@ const VideoUpload = () => {
                         aria-hidden="true"
                       />
                     )}
-                    {isSubmitting ? '  ...' : 'OK'}
+                    {isSubmitting ? '  ...' : 'Enviar video'}
                   </Button>
                 </Col>
               </Row>

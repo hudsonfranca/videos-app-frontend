@@ -72,8 +72,13 @@ const Signup: React.FC = () => {
       try {
         await api().post('/auth/signup', formData)
         router.reload()
-      } catch (error) {
-        console.error(error)
+      } catch ({ response: { data } }) {
+        const notifyEmailError = () => {
+          toast.error(`${values.email} já está em uso.`)
+        }
+        if (data.statusCode === 409) {
+          return notifyEmailError()
+        }
         notifyError()
       }
     }

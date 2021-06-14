@@ -35,7 +35,8 @@ export const Header: React.FC = () => {
       bg="light"
       variant="light"
       fixed="top"
-      expand="sm"
+      collapseOnSelect
+      expand="lg"
       className={styles.header}
     >
       <Navbar.Brand
@@ -71,8 +72,10 @@ export const Header: React.FC = () => {
         <Nav className=" justify-content-end">
           {!user && (
             <>
-              <Nav.Link onClick={() => router.push('/login')}>Login</Nav.Link>
-              <Nav.Link onClick={() => router.push('/signup')}>
+              <Nav.Link eventKey="1" onClick={() => router.push('/login')}>
+                Login
+              </Nav.Link>
+              <Nav.Link eventKey="2" onClick={() => router.push('/signup')}>
                 Cadastre-se
               </Nav.Link>
             </>
@@ -83,11 +86,16 @@ export const Header: React.FC = () => {
               <Nav.Link
                 onClick={() => router.push('/my_account')}
                 className={styles.my_account}
+                eventKey="3"
               >
                 <img src={user.profilePicture} className={styles.avatar} />
                 Minha conta
               </Nav.Link>
-              <Nav.Link onClick={logout} className="d-flex align-items-center">
+              <Nav.Link
+                onClick={logout}
+                eventKey="4"
+                className="d-flex align-items-center"
+              >
                 Sair
               </Nav.Link>
             </>
