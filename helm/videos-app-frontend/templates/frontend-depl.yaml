@@ -24,13 +24,5 @@ spec:
             memory: "300Mi"
         ports:
         - containerPort: 3000
-        env:
-          - name: NEXT_PUBLIC_BACKEND_URL
-            valueFrom: 
-              configMapKeyRef:
-                name: {{ .Release.Name }}-frontend-configmap
-                key: backend_url
-          - name: NEXT_PUBLIC_BACKEND_SERVICE_NAME
-            value: {{ .Release.Name }}-frontend-service
-       
+
 
