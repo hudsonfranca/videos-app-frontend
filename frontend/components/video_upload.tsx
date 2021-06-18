@@ -9,7 +9,7 @@ import * as Yup from 'yup'
 import { ToastContainer, toast } from 'react-toastify'
 
 const IMAGE_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png']
-const VIDEO_FORMATS = ['video/mp4', 'video/WebM']
+const VIDEO_FORMATS = ['video/mp4', 'video/webm']
 
 const validationSchema = Yup.object({
   name: Yup.string().required('campo obrigatório'),
