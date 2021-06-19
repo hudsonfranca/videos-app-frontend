@@ -41,11 +41,15 @@ const WatchVideo = ({
       <Container className={styles.container} fluid>
         <div className={styles.video}>
           <LionPlayer
-            sources={{ src: video.url }}
-            autoplay="muted"
+            src={{ src: video.url }}
+            autoplay={false}
             language="pt"
             nativeControlsForTouch
-            fluid
+            fluid={true}
+            preload="auto"
+            muted={false}
+            poster={video.thumbnail}
+            controls={true}
           />
           ,<p className={styles.videoTitle}>{video.name}</p>
         </div>
