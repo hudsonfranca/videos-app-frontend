@@ -17,11 +17,11 @@ spec:
         image: hudsonfranca/videosapp_frontend:latest
         resources:
           limits:
-            cpu: "0.5"
-            memory: "600Mi"
+            cpu: "0.9"
+            memory: "900Mi"
           requests:
-            cpu: "0.5"
-            memory: "300Mi"
+            cpu: "0.6"
+            memory: "600Mi"
         ports:
         - containerPort: 3000
 
